@@ -9,7 +9,7 @@ import React from 'react';
 
 
 function App() {
-  const nameTitle ="Strona głównaaaa"
+  const nameTitle ="Strona główna"
   return (
     <React.Fragment>
        <Navbar/>
