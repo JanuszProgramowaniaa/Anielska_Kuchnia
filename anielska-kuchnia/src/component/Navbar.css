@@ -5,7 +5,7 @@
   ul {
     list-style-type: none;
   }
-  :-webkit-any-link {
+  li a{
     float: left;
     display: block;
     color: wheat !important;
