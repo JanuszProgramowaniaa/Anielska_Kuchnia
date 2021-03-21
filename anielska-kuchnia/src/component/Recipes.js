@@ -1,5 +1,4 @@
 import React, { useState }  from 'react'
-import Baner from './Baner'
 import './Recipes.css';
 import CardComponent from './CardComponent'
 import { makeStyles } from '@material-ui/core/styles';
@@ -29,7 +28,6 @@ export default function Recipes() {
     <div className={classes.root}>
     
       <Grid container spacing={3}>
-      
         <Grid item xl={3} lg={3} md={3} sm={4} xs={12}>
         <CardComponent/>
         </Grid>
@@ -39,7 +37,7 @@ export default function Recipes() {
         <Grid item  xl={3} lg={3} md={3} sm={4} xs={12}>
         <CardComponent/>
         </Grid>
-        <Grid item  xl={3} lg={3} md={3} sm={4} xs={12} >
+        <Grid item  xl={3} lg={3} md={3} sm={4} xs={12}>
         <CardComponent/>
         </Grid>
         <Grid item  xl={3} lg={3} md={3} sm={4} xs={12}>

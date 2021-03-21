@@ -7,21 +7,20 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import lazania from '../static/recipes/lazania.png';
+import pizza from '../static/recipes/pizza.jpg'
+import spaghetti from '../static/recipes/spaghetti.jpg'
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     root: {
-      maxWidth: 345,
+      maxWidth: '100vw',
       minHeight:300
     },
     media: {
       height: 140,
     },
   });
-  
-
 export default function CardComponent() {
-   
     const classes = useStyles();
 
     return (
@@ -37,17 +36,16 @@ export default function CardComponent() {
                     Lasagne Bolognese
                   </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
+                  Lasagne bolognese to pyszny pomysł na obiad, który z pewnością podbije Wasze serca!
+                   Wiecie jak mocno kocham kuchnię włoską i mogłabym ją jeść wręcz codziennie.
+                   Pięknie pachnąca, warstwowa zapiekanka z mięsem mielonym, warzywami przekładana 
+                   makaronem do lasagne, serem mozzarella…
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
-                  Share
-                </Button>
                 <Button size="small" color="primary" onClick={() => window.location.replace("Details.js")}>
-                  Read more
+                  Czytaj wiecej
                 </Button>
               </CardActions>
             </Card>
