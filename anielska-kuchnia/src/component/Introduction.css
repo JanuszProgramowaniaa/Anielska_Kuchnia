@@ -21,8 +21,8 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    display: inline-block;
-    margin-left: 40%;
+   
+   
   }
   button:hover{
       cursor:pointer;
