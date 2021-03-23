@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   });
 export default function CardComponent() {
     const classes = useStyles();
-
+    const imgs = [lazania,pizza,spaghetti]
     return (
         <Card className={classes.root}>
               <CardActionArea>
