@@ -1,9 +1,4 @@
-ody {
-    background-color: #252830;
-    color: white;
-    font-family: "Lato";
-  }
-  .container-fluid {
+.container-fluid {
     position: absolute;
     left: 50%;
     top: 50%;

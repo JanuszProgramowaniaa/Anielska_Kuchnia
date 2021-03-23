@@ -11,7 +11,4 @@ npm install
 
 3.Aby uruchomić aplikację
 npm run start 
-
-Aby sprawdzić zaproszenia do kolaboracji należy wejść pod podany link
-
 https://github.com/JanuszProgramowaniaa/Anielska_Kuchnia/invitations 
