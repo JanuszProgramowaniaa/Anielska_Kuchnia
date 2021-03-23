@@ -32,7 +32,7 @@ export default class Recommend extends Component {
                 title="lasagneBolognese"
               />
               <h3>lasagne bolognese</h3>
-              <button type="button" className="Rec">Sprawdź </button>
+              <button type="button" className="Rec" onClick={() => window.location.replace("Recipes")}>Sprawdź </button>
 </div>
 <div className="Rec">
 <CardMedia 
@@ -45,7 +45,7 @@ export default class Recommend extends Component {
                 
               />
               <h3>Salatka meksykanska</h3>
-              <button type="button" className="Rec">Sprawdź </button>
+              <button type="button" className="Rec" onClick={() => window.location.replace("Recipes")}>Sprawdź </button>
  </div>
  <div className="Rec">
 <CardMedia 
@@ -57,7 +57,7 @@ export default class Recommend extends Component {
                 title="salatka_makaronowa"
               />
               <h3>Salatka makaronowa</h3>
-              <button type="button" className="Rec">Sprawdź </button>
+              <button type="button" className="Rec" onClick={() => window.location.replace("Recipes")}>Sprawdź </button>
 </div>
 
 <div className="Rec">
@@ -70,7 +70,7 @@ export default class Recommend extends Component {
                 title="zapiekanka_z_bagietki"
               />
               <h3>Zapiekanka z bagietki</h3>
-              <button type="button" className="Rec">Sprawdź </button>
+              <button type="button" className="Rec" onClick={() => window.location.replace("Recipes")}>Sprawdź </button>
 </div>
 
 

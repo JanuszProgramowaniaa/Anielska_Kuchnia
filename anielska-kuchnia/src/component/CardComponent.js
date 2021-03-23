@@ -44,7 +44,7 @@ export default function CardComponent() {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary" onClick={() => window.location.replace("Details.js")}>
+                <Button size="small" color="primary" onClick={() => window.location.replace("Details")}>
                   Czytaj wiecej
                 </Button>
               </CardActions>

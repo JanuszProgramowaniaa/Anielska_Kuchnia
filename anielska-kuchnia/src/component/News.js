@@ -34,7 +34,7 @@ export default class News extends Component {
                 title="schab"
               />
              <h3>Schab pieczony</h3>
-              <button type="button" className="Rec1">Sprawdź </button>
+              <button type="button" className="Rec1" onClick={() => window.location.replace("Recipes")}>Sprawdź </button>
 </div>
 
 <div className="Rec">
@@ -47,7 +47,7 @@ export default class News extends Component {
                 title="jaja_z_farszem"
               />
              <h3>Jaja z farszem</h3>
-              <button type="button" className="Rec1">Sprawdź </button>
+              <button type="button" className="Rec1" onClick={() => window.location.replace("Recipes")}>Sprawdź </button>
 </div>
  
 
@@ -61,7 +61,7 @@ export default class News extends Component {
                 title="pierogi"
               />
              <h3>Pierogi</h3>
-              <button type="button" className="Rec1">Sprawdź </button>
+              <button type="button" className="Rec1" onClick={() => window.location.replace("Recipes")}>Sprawdź </button>
 </div>
 
 <div className="Rec">
@@ -74,7 +74,7 @@ export default class News extends Component {
                 title="lazania"
               />
              <h3>Lazania</h3>
-              <button type="button" className="Rec1">Sprawdź </button>
+              <button type="button" className="Rec1" onClick={() => window.location.replace("Recipes")}>Sprawdź </button>
 </div>
 
 <div className="Rec">
@@ -87,7 +87,7 @@ export default class News extends Component {
                 title="mega_rollo"
               />
              <h3>Mega rollo</h3>
-              <button type="button" className="Rec1">Sprawdź </button>
+              <button type="button" className="Rec1" onClick={() => window.location.replace("Recipes")}>Sprawdź </button>
 </div>
 
 
