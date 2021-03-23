@@ -1,0 +1,15 @@
+div.Hot{
+   
+    width:30%;
+    text-align: center;
+    float:left;
+}
+h1.Hot{
+    animation:blinkingText 1.5s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: red;    }
+    40%{    color: orange; }
+    60%{    color: pink; }
+    100%{   color: green;    }
+}

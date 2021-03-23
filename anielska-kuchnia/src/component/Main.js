@@ -1,9 +1,14 @@
 import React from 'react'
-import Baner from './Baner'
+import Hotfood from './Hotfood'
+import Introduction from './Introduction'
+import Recommend from './Recommend'
 export default function Main() {
     return (
         <div>
-         <Baner title="Main page"/>
+        <Hotfood/>
+        <Introduction/>
+        <Recommend/>
+        
         </div>
     )
 }
