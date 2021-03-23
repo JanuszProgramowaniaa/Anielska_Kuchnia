@@ -1,6 +1,8 @@
 import React from 'react'
 import lazania from '../static/recipes/lazania.png'
 import CardMedia from '@material-ui/core/CardMedia';
+import './Details.css';
+
 
 export default function Details() {
     // return (
@@ -53,4 +55,5 @@ export default function Details() {
 
         </div>
     )
+
 }
