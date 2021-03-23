@@ -6,6 +6,10 @@ import jaja from '../static/recipes/jaja_z_farszem.png'
 import schab from '../static/recipes/schab_pieczony.png'
 import pierogi from '../static/recipes/pierogi.png'
 import mega_rollo from '../static/recipes/mega_rollo.png'
+
+
+
+
 export default class News extends Component {
     render() {
  
@@ -20,7 +24,8 @@ export default class News extends Component {
              
                <h1 className="News">{this.props.title}</h1>
                <div>
-               <CardMedia className="Rec"
+               <div className="Rec">
+               <CardMedia 
                 style={{height:'250px',
                 width:'250px'
                 }}
@@ -28,20 +33,26 @@ export default class News extends Component {
                 image={schab}
                 title="schab"
               />
+             <h3>Schab pieczony</h3>
+              <button type="button" className="Rec1">Sprawdź </button>
+</div>
 
-
-<CardMedia className="Rec"
-                style={{height:'250px', 
+<div className="Rec">
+               <CardMedia 
+                style={{height:'250px',
                 width:'250px'
                 }}
                 
                 image={jaja}
-                title="lasagneBolognese"
-                
+                title="jaja_z_farszem"
               />
+             <h3>Jaja z farszem</h3>
+              <button type="button" className="Rec1">Sprawdź </button>
+</div>
  
 
-<CardMedia className="Rec"
+ <div className="Rec">
+               <CardMedia 
                 style={{height:'250px',
                 width:'250px'
                 }}
@@ -49,8 +60,25 @@ export default class News extends Component {
                 image={pierogi}
                 title="pierogi"
               />
+             <h3>Pierogi</h3>
+              <button type="button" className="Rec1">Sprawdź </button>
+</div>
 
-<CardMedia className="Rec"
+<div className="Rec">
+               <CardMedia 
+                style={{height:'250px',
+                width:'250px'
+                }}
+                
+                image={lazania}
+                title="lazania"
+              />
+             <h3>Lazania</h3>
+              <button type="button" className="Rec1">Sprawdź </button>
+</div>
+
+<div className="Rec">
+               <CardMedia 
                 style={{height:'250px',
                 width:'250px'
                 }}
@@ -58,15 +86,9 @@ export default class News extends Component {
                 image={mega_rollo}
                 title="mega_rollo"
               />
-
-<CardMedia className="Rec"
-                style={{height:'250px',
-                width:'250px'
-                }}
-                
-                image={lazania}
-                title="lasagneBolognese"
-              />
+             <h3>Mega rollo</h3>
+              <button type="button" className="Rec1">Sprawdź </button>
+</div>
 
 
                </div>

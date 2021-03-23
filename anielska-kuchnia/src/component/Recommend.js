@@ -22,7 +22,8 @@ export default class Recommend extends Component {
                <h1 className="Zapchaj">s</h1>
                <h1 className="Recommends">{this.props.title}</h1>
                <div>
-               <CardMedia className="Rec"
+               <div className="Rec">
+               <CardMedia
                 style={{height:'250px',
                 width:'320px'
                 }}
@@ -30,9 +31,11 @@ export default class Recommend extends Component {
                 image={lazania}
                 title="lasagneBolognese"
               />
-
-
-<CardMedia className="Rec"
+              <h3>lasagne bolognese</h3>
+              <button type="button" className="Rec">Sprawdź </button>
+</div>
+<div className="Rec">
+<CardMedia 
                 style={{height:'250px', 
                 width:'320px'
                 }}
@@ -41,9 +44,11 @@ export default class Recommend extends Component {
                 title="salatka_meksykanska"
                 
               />
- 
-
-<CardMedia className="Rec"
+              <h3>Salatka meksykanska</h3>
+              <button type="button" className="Rec">Sprawdź </button>
+ </div>
+ <div className="Rec">
+<CardMedia 
                 style={{height:'250px',
                 width:'320px'
                 }}
@@ -51,8 +56,12 @@ export default class Recommend extends Component {
                 image={salatka_makaronowa}
                 title="salatka_makaronowa"
               />
+              <h3>Salatka makaronowa</h3>
+              <button type="button" className="Rec">Sprawdź </button>
+</div>
 
-<CardMedia className="Rec"
+<div className="Rec">
+<CardMedia 
                 style={{height:'250px',
                 width:'320px'
                 }}
@@ -60,7 +69,9 @@ export default class Recommend extends Component {
                 image={zapiekanka_z_bagietki}
                 title="zapiekanka_z_bagietki"
               />
-
+              <h3>Zapiekanka z bagietki</h3>
+              <button type="button" className="Rec">Sprawdź </button>
+</div>
 
 
 
