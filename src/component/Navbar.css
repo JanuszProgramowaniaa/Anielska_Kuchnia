@@ -18,3 +18,7 @@ li a{
   background-color: #ddd;
   color: black;
 }
+.loginLink{
+  float:right;
+  margin-right: 10px;
+}

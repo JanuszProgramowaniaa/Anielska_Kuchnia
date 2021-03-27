@@ -3,6 +3,7 @@ import './Navbar.css';
 import Main from './Main'
 import Details from './Details'
 import Recipes from './Recipes'
+import Login from './Login'
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,6 +25,9 @@ export default function Navbar() {
             <li>
               <Link to="/Recipes">Recipes</Link>
             </li>
+            <li>
+              <Link to="/Login" className="loginLink">Login</Link>
+            </li>
           </ul>
         </nav>
        
@@ -39,6 +43,9 @@ export default function Navbar() {
           </Route>
           <Route path="/Recipes">
             <Recipes />
+          </Route>
+          <Route path="/Login">
+            <Login />
           </Route>
         </Switch>
       </div>
