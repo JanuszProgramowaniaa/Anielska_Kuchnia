@@ -7,8 +7,6 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import lazania from '../static/recipes/lazania.png';
-import pizza from '../static/recipes/pizza.jpg'
-import spaghetti from '../static/recipes/spaghetti.jpg'
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
