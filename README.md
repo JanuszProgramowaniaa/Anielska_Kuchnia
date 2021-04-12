@@ -2,8 +2,10 @@ Przed wykonaniem poniższych instrukcji, należy mieć wcześniej zainstalowany 
 Aby korzystac z projektu należy lokalnie w folderze wykonać poniższe kroki
 1.Otworzyć gitbash w folderze a nastepnie wpisac
 
-git init
+git init 
+
 git remote add origin https://github.com/JanuszProgramowaniaa/Anielska_Kuchnia.git
+
 git pull origin master
 
 2.Po otworzeniu folderu z aplikacją uruchamiamy z jego poziomu  
