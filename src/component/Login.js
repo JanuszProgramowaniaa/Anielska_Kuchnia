@@ -7,7 +7,7 @@ export default function Login() {
         <React.Fragment>
         <h1 className={LoginStyles.logujSieHamie}>Zaloguj sie</h1>
         <form action="action_page.php" method="post">
-            <div class="imgcontainer">
+            <div className={LoginStyles.img}>
               <img src={img} alt="Avatar" class="avatar"/>
             </div>
             <div class="container">
