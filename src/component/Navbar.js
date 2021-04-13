@@ -7,6 +7,7 @@ import Login from './Login'
 import Ranking from './Ranking'
 import Konto from './Konto'
 import Ulubiony from './Ulubiony'
+import Rejestracja from './Rejestracja'
 import {
   BrowserRouter as Router,
   Switch,
@@ -30,6 +31,9 @@ export default function Navbar() {
             </li>
             <li>
               <Link to="/Login" className="loginLink">Login</Link>
+            </li>
+            <li>
+              <Link to="/Rejestracja" className="loginLink">Rejestracja</Link>
             </li>
             <li>
               <Link to="/Ranking">Ranking</Link>
@@ -58,6 +62,9 @@ export default function Navbar() {
           </Route>
           <Route path="/Login">
             <Login />
+          </Route>
+          <Route path="/Rejestracja">
+            <Rejestracja />
           </Route>
           <Route path="/Ranking">
             <Ranking />
