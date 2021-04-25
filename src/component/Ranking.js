@@ -98,9 +98,7 @@ export default function Ranking() {
            <h1 className={RankingStyles.h1}>Ranking przepisów</h1>
             <button className={RankingStyles.buttonClass} onClick={sortTableByRatings}>Najwyżej oceniane</button>
             <button className={RankingStyles.buttonClass} onClick={sortTableByComments}>Najczęściej komentowane</button>
-            <label className={RankingStyles.searchLabel}for="searchMealInput">Szukaj potrawy:</label>
-            <input type="search" className={RankingStyles.searchbar} id="searchMealInput" name="searchMealInput"/>
-            <button className={RankingStyles.searchButton}>Szukaj</button>
+         
             <table className={RankingStyles.table} id="mytable">
             <tr>
               <th>Nazwa dania</th>

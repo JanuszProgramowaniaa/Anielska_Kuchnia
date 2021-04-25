@@ -1,8 +1,7 @@
 import './App.css';
 import Baner from './component/Baner'
-import Navbar from './component/Navbar'
+import Navigacja from './component/Navigacja'
 import React from 'react';
-
 
 
 
@@ -10,7 +9,7 @@ import React from 'react';
 function App() {
   return (
     <React.Fragment>
-       <Navbar/>
+       <Navigacja/>
       <Baner/>
      
     </React.Fragment>
