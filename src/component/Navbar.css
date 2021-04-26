@@ -26,29 +26,5 @@ li a{
   float:right;
 }
 
-@media (max-width: 800px) {
-  
-    .navbar-brand{margin-left:20%;}
-  
-  .nav-link{margin-left:100%;}
-   .btn-outline-success{margin-left:40%;}
-  .linki1{
-      
-      
-      margin-left:30px;
-     
-    
-    }
-    .linki2{
-      
-      
-      margin-left:12px;
-     
-    
-    }
-    .navbarek{position:relative;}
-  
-
-}
 
 

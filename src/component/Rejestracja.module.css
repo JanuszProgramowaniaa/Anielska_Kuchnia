@@ -51,7 +51,7 @@ span.psw {
 /*class composition - dziedziczenie klasy cssowej z innego pliku css*/
 .logujSieHamie{
     font-weight: 900;
-    composes: Hot from './Hotfood.css';
+    composes: Hot from './Hotfood.module.css';
 }
 @keyframes blinkingText{
     0%{     color: red;    }

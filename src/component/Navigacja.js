@@ -24,7 +24,7 @@ export default function Navigacja() {
   return (
     <Router>
       <div >
-        <Navbar bg="light" expand="lg" sticky="top">
+        <Navbar collapseOnSelect bg="light" expand="lg" sticky="top">
           <Navbar.Brand>
             <img
               alt=""
@@ -33,16 +33,23 @@ export default function Navigacja() {
               height="30"
               className="d-inline-block align-top logo"
             />
-            <Link to="/" clasname="logo">Anielska kuchnia</Link></Navbar.Brand>
+            <Link to="/" clasname="logo">Anielska kuchnia</Link>
+          </Navbar.Brand>
+          <Form inline action="wyszukiwarka" className="linki2">
+            <FormControl type="text" placeholder="Szukaj przepisów..." className="mr-sm-2" />
+            <Button variant="outline-success" type="submit" className="linki3">Szukaj</Button>
+          </Form>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link></Nav.Link>
             <Nav.Link><Link clasname="linki" to="/przepisy">Przepisy</Link></Nav.Link>
 
 
-            <Nav.Link ><Link  clasname="linki" to="/Ranking">Ranking</Link></Nav.Link>
-            <Nav.Link><Link  clasname="linki" to="/Konto" >Konto</Link></Nav.Link>
-            <Nav.Link > <Link  clasname="linki" to="/Ulubiony">Ulubiony przepis</Link></Nav.Link>
-            <Nav.Link > <Link  clasname="linki" to="/generator">Generator</Link></Nav.Link>
+            <Nav.Link ><Link clasname="linki" to="/Ranking">Ranking</Link></Nav.Link>
+            <Nav.Link><Link clasname="linki" to="/Konto" >Konto</Link></Nav.Link>
+            <Nav.Link > <Link clasname="linki" to="/Ulubiony">Ulubiony przepis</Link></Nav.Link>
+            <Nav.Link > <Link clasname="linki" to="/generator">Generator</Link></Nav.Link>
 
             {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -52,16 +59,14 @@ export default function Navigacja() {
             <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
           </NavDropdown> */}
           </Nav>
-          <Form inline action="wyszukiwarka" className="linki2">
-            <FormControl type="text"  placeholder="Szukaj przepisów..." className="mr-sm-2" />
-            <Button variant="outline-success" type="submit" className="linki3">Szukaj</Button>
-          </Form>
+          
 
           <Nav className="ml-sm-1">
             <Nav.Link><Link className="linki1" to="/Login" >Login</Link></Nav.Link>
             <Nav.Link><Link className="linki1" to="/Rejestracja">Rejestracja</Link></Nav.Link>
           </Nav>
-
+          </Navbar.Collapse>
+          
         </Navbar>
 
 

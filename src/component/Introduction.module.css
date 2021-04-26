@@ -1,15 +1,29 @@
-div.Introduction{
-   
-float:left;
-width:70%;
-}
-h1.Introduction{
-    text-align:center;
+div.Container{
+    flex-grow: 2;
+    flex-shrink: 4;
+    width: 60%;
+
 }
 
-p{
-    font-weight:500;
+.imageStyle{
+    height: 200px;
+    width: 90%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.Title{
+    font-size: 2em;
+    font-weight:700;
     text-align: center;
+}
+.Content{
+    font-size: 1em;
+    font-weight:400;
+    
+}
+p{
+    
 }
 
 button {
@@ -28,7 +42,10 @@ button {
       cursor:pointer;
   }
   @media (max-width: 800px) {
-    .Introduction{visibility:hidden;}
+    .Container{
+
+        
+    }
   
   
     }
