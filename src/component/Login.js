@@ -8,7 +8,7 @@ export default function Login() {
         <h1 className={LoginStyles.logujSieHamie}>Zaloguj sie</h1>
         <form action="action_page.php" method="post">
             <div className={LoginStyles.img}>
-              <img src={img} alt="Avatar" class="avatar"/>
+              <img src={img}  alt="Avatar" class="avatar"/>
             </div>
             <div class="container">
               <label for="uname"><b>Nazwa użytkownika</b></label>

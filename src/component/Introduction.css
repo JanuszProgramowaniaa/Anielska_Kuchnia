@@ -27,3 +27,8 @@ button {
   button:hover{
       cursor:pointer;
   }
+  @media (max-width: 800px) {
+    .Introduction{visibility:hidden;}
+  
+  
+    }

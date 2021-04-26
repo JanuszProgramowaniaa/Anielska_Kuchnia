@@ -29,3 +29,11 @@
     float: right;
     margin-top: 15%;
 }
+
+
+@media (max-width: 800px) {
+.avatar_konto{margin-left:-10%;}
+
+
+    
+}

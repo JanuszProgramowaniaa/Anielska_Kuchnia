@@ -69,3 +69,11 @@ span.psw {
      width: 100%;
   }
 }
+
+
+@media (max-width: 800px) {
+  img.avatar{width: 100%;}
+  
+  
+      
+  }

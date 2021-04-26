@@ -16,8 +16,8 @@ export default function Konto() {
         
         <div className="Konto">
             <div className="nazwaKonta">Robert Makłowicz</div>
-            <button className="edytuj">Edytuj dane</button>
-            <button className="zapisz">Zapisz dane</button>
+            <button className="edytuj ">Edytuj dane</button>
+            <button className="zapisz ">Zapisz dane</button>
             <img className="avatar_konto" src={img}/>
             
             <div className="opisKonta">

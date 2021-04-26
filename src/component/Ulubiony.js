@@ -1,73 +1,57 @@
 import React from 'react'
-import CardMedia from '@material-ui/core/CardMedia';
-import UlubionyStyles from './Ulubiony.module.css';
-import lazania from '../static/recipes/lazania.png'
+import './Ulubiony.module.css';
+import CardComponent from './CardComponent'
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    flexBasis: 100,
+    justifyContent: "center"
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }
+
+}));
+
 
 
 export default function Ulubiony() {
-    // return (
-    //     <div>
-            
-    //         <Baner title="Details"/>
-    //     </div>
-    // )
+  const classes = useStyles();
+  return (
 
-    return (
+    <React.Fragment>
+      <div className={classes.root}>
+ <h1>Ulubione przepisy</h1>
+        <Grid container spacing={2}>
+          <Grid item xl={3} lg={4} md={3} sm={3} xs={12}>
+            <CardComponent />
+          </Grid>
+          <Grid item xl={3} lg={4} md={3} sm={3} xs={12}>
+            <CardComponent />
+          </Grid>
+          <Grid item xl={3} lg={4} md={3} sm={3} xs={12}>
+            <CardComponent />
+          </Grid>
+          <Grid item xl={3} lg={4} md={3} sm={3} xs={12}>
+            <CardComponent />
+          </Grid>
+          <Grid item xl={3} lg={4} md={3} sm={3} xs={12}>
+            <CardComponent />
+          </Grid>
+          <Grid item xl={3} lg={4} md={3} sm={3} xs={12}>
+            <CardComponent />
+          </Grid>
+         
+         
+         
+        </Grid>
+      </div>
+    </React.Fragment>
 
-        <div className={UlubionyStyles.ulubiony}>
-            <span className={UlubionyStyles.spanClass}> Najczęściej wybierane przepisy przez użytkowników</span>
-            <div class="grid-container">
-                <div className={UlubionyStyles.kafel}>
-                    <CardMedia
-                        style={{height:'250px'}}
-                        
-                        image={lazania}
-                        title="lasagneBolognese"
-                    />
-                    <span className={UlubionyStyles.opisUlubiony}>
-                        Lazania wbrew pozorom jest bardzo prostym daniem. Ta doskonała uczta kulinarna smakuje prawie każdemu. Nie wymaga wielkich zdolności kulinarnych, wystarczy trzymać się przepisu. Co więcej - po odgrzaniu smakuje równie dobrze, więc z powodzeniem możemy ją zabrać do pracy.
-                    </span>
-                    <button className={UlubionyStyles.more_info}>Zobacz więcej</button>
-                </div>
-                <div className={UlubionyStyles.kafel}>
-                    <CardMedia
-                        style={{height:'250px'}}
-                        
-                        image={lazania}
-                        title="lasagneBolognese"
-                    />
-                    <span className={UlubionyStyles.opisUlubiony}>
-                        Lazania wbrew pozorom jest bardzo prostym daniem. Ta doskonała uczta kulinarna smakuje prawie każdemu. Nie wymaga wielkich zdolności kulinarnych, wystarczy trzymać się przepisu. Co więcej - po odgrzaniu smakuje równie dobrze, więc z powodzeniem możemy ją zabrać do pracy.
-                    </span>
-                    <button className={UlubionyStyles.more_info}>Zobacz więcej</button>
-                </div>
-                <div className={UlubionyStyles.kafel}>
-                    <CardMedia
-                        style={{height:'250px'}}
-                        
-                        image={lazania}
-                        title="lasagneBolognese"
-                    />
-                    <span className={UlubionyStyles.opisUlubiony}>
-                        Lazania wbrew pozorom jest bardzo prostym daniem. Ta doskonała uczta kulinarna smakuje prawie każdemu. Nie wymaga wielkich zdolności kulinarnych, wystarczy trzymać się przepisu. Co więcej - po odgrzaniu smakuje równie dobrze, więc z powodzeniem możemy ją zabrać do pracy.
-                    </span>
-                    <button className={UlubionyStyles.more_info}>Zobacz więcej</button>
-                </div>
-                <div className={UlubionyStyles.kafel}>
-                    <CardMedia
-                        style={{height:'250px'}}
-                        
-                        image={lazania}
-                        title="lasagneBolognese"
-                    />
-                    <span className={UlubionyStyles.opisUlubiony}>
-                        Lazania wbrew pozorom jest bardzo prostym daniem. Ta doskonała uczta kulinarna smakuje prawie każdemu. Nie wymaga wielkich zdolności kulinarnych, wystarczy trzymać się przepisu. Co więcej - po odgrzaniu smakuje równie dobrze, więc z powodzeniem możemy ją zabrać do pracy.
-                    </span>
-                    <button className={UlubionyStyles.more_info}>Zobacz więcej</button>
-                </div>
-            </div>
-        </div>
-        
-    )
-
+  )
 }

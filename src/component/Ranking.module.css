@@ -61,3 +61,10 @@
   .commentsQuantityValue::after{
     color: #4CAF50;
   }
+
+
+  @media (max-width: 800px) {
+    .buttonClass{width: 100%;}
+  
+  
+    }

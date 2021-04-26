@@ -13,3 +13,9 @@ div.Hot{
     60%{    color: pink; }
     100%{   color: green;    }
 }
+
+@media (max-width: 800px) {
+  .Hot{visibility:hidden;}
+
+
+  }
