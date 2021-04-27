@@ -24,7 +24,7 @@ export default function Navigacja() {
   return (
     <Router>
       <div >
-        <Navbar collapseOnSelect bg="light" expand="lg" sticky="top">
+        <Navbar bg="light" expand="lg" sticky="top" collapseOnSelect>
           <Navbar.Brand>
             <img
               alt=""
@@ -39,34 +39,31 @@ export default function Navigacja() {
             <FormControl type="text" placeholder="Szukaj przepisów..." className="mr-sm-2" />
             <Button variant="outline-success" type="submit" className="linki3">Szukaj</Button>
           </Form>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" data-toggle="collapse" />
           <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link></Nav.Link>
-            <Nav.Link><Link clasname="linki" to="/przepisy">Przepisy</Link></Nav.Link>
+            <Nav className="mr-auto">
+              <Nav.Link href="przepisy">Przepisy</Nav.Link>
+              <Nav.Link href="ranking">Ranking</Nav.Link>
+              <Nav.Link href="konto">Konto</Nav.Link>
+              <Nav.Link href="Ulubiony"> Ulubiony</Nav.Link>
+              <Nav.Link href="generator">Generator</Nav.Link>
 
-
-            <Nav.Link ><Link clasname="linki" to="/Ranking">Ranking</Link></Nav.Link>
-            <Nav.Link><Link clasname="linki" to="/Konto" >Konto</Link></Nav.Link>
-            <Nav.Link > <Link clasname="linki" to="/Ulubiony">Ulubiony przepis</Link></Nav.Link>
-            <Nav.Link > <Link clasname="linki" to="/generator">Generator</Link></Nav.Link>
-
-            {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
           </NavDropdown> */}
-          </Nav>
-          
+            </Nav>
 
-          <Nav className="ml-sm-1">
-            <Nav.Link><Link className="linki1" to="/Login" >Login</Link></Nav.Link>
-            <Nav.Link><Link className="linki1" to="/Rejestracja">Rejestracja</Link></Nav.Link>
-          </Nav>
+
+            <Nav className="ml-sm-1">
+              <Nav.Link href="login">Login</Nav.Link>
+              <Nav.Link href="rejestracja">Rejestracja</Nav.Link>
+            </Nav>
           </Navbar.Collapse>
-          
+
         </Navbar>
 
 
