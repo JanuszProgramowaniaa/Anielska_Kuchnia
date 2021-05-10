@@ -1,17 +1,17 @@
 import './App.css';
-import Baner from './component/Baner'
-import Navigacja from './component/Navigacja'
+import Navigacja from './component/Common/Navigacja'
 import React from 'react';
-
+import {Helmet} from 'react-helmet'
 
 
 
 function App() {
   return (
     <React.Fragment>
+    <Helmet>
+    <title>Anielska kuchnia</title>
+    </Helmet>
        <Navigacja/>
-      <Baner/>
-     
     </React.Fragment>
     
 
