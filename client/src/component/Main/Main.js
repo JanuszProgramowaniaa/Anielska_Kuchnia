@@ -16,7 +16,7 @@ export default class Main extends Component {
   
   componentDidMount(){
     axios
-    .get("http://localhost:5000/recipes")
+    .get("/recipes")
     .then((response) => {
       this.setState({ recipes: response.data ,isLoading:false});
     })
