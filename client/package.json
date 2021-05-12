@@ -1,6 +1,6 @@
 {
   "name": "anielska-kuchnia",
-  "proxy":"http://localhost:5000",
+  "proxy": "http://localhost:5000",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,7 +12,6 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "clsx": "^1.1.1",
-    "concurrently": "^6.1.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.1",
@@ -23,7 +22,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "dev": "concurrently \"npm run start\" \"cd backend && npm run serve\" ",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
