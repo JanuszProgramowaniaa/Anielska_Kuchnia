@@ -20,6 +20,7 @@ import { Button, Navbar, Nav, Form, FormControl } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
 export default function Navigacja() {
   return (
     <Router>
@@ -47,7 +48,6 @@ export default function Navigacja() {
               <Nav.Link href="konto">Konto</Nav.Link>
               <Nav.Link href="Ulubiony"> Ulubiony</Nav.Link>
               <Nav.Link href="generator">Generator</Nav.Link>
-
               {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
