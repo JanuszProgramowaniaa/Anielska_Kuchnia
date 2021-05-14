@@ -1,4 +1,4 @@
-const express = require('express');
+ express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
@@ -20,9 +20,11 @@ connection.once('open', () => {
 })
 
 const recipeRouter = require('./routes/recipe');
+const userRouter = require('./routes/users');
+
 
 app.use('/recipes',recipeRouter);
-
+app.use('/rejestracja',userRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
