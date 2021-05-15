@@ -1,8 +1,8 @@
 const router = require('express').Router();
 let Recipe = require('../models/recipe.model');
+const auth = require('../middleware/auth')
 
-
-router.route('/').get((req, res) => {
+router.get('/',(req, res) => {
     // let random = Math.floor(Math.random()*2 + 1)
   
     // Exercise.findOne().skip(random)
@@ -13,7 +13,7 @@ router.route('/').get((req, res) => {
       .catch(err => res.status(400).json('Error: ' + err));
   });
 
-router.route('/add').post((req, res) => {
+router.post('/add',auth,(req, res) => {
     const tytul = req.body.tytul;
     const krotki_opis = req.body.krotki_opis;
     const skladniki = req.body.skladniki;

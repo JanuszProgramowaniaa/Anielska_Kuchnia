@@ -21,10 +21,12 @@ connection.once('open', () => {
 
 const recipeRouter = require('./routes/recipe');
 const userRouter = require('./routes/users');
-
+const authRouter = require('./routes/auth');
 
 app.use('/recipes',recipeRouter);
 app.use('/rejestracja',userRouter);
+app.use('/Login',authRouter);
+
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
