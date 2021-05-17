@@ -18,7 +18,7 @@ class Main extends Component {
     return (
       <div className={MainStyles.Container}>
       
-      { this.props.przepisy[6] ? 
+      { this.props.przepisy[0] ? 
       (
         <React.Fragment>
         <Hotfood recipes={this.props.przepisy[0].tytul} />
