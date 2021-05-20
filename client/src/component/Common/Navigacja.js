@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import './Navbar.css';
 import Main from '../Main/Main'
 import Details from '../Details/Details'
 import Recipes from '../Recipes/Recipes'
 import Login from '../Login/Login'
+import Logout from '../Login/Logout'
 import Ranking from '../Rank/Ranking'
 import Konto from '../Userprofile/Konto'
 import Ulubiony from '../Favourite/Ulubiony'
@@ -18,13 +19,31 @@ import {
 } from "react-router-dom";
 import { Button, Navbar, Nav, Form, FormControl } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { connect } from 'react-redux'
 
 
 
-export default function Navigacja() {
+function Navigacja({ auth }) {
+  const { isAuthenticated, user } = auth
+
+  const authLinks = (
+    <Nav className="ml-sm-1">
+      <Nav.Link href="konto" >{user ? (<b>cześć {user.name}</b>) : ''}</Nav.Link>
+      <Logout />
+
+    </Nav>
+  )
+  const guestLinks = (
+    <Nav className="ml-sm-1">
+      <Nav.Link href="login">Login</Nav.Link>
+      <Nav.Link href="rejestracja">Rejestracja</Nav.Link>
+    </Nav>
+  )
+
   return (
     <Router>
       <div >
+
         <Navbar bg="light" expand="lg" sticky="top" collapseOnSelect>
           <Navbar.Brand>
             <img
@@ -45,23 +64,13 @@ export default function Navigacja() {
             <Nav className="mr-auto">
               <Nav.Link href="przepisy">Przepisy</Nav.Link>
               <Nav.Link href="ranking">Ranking</Nav.Link>
-              <Nav.Link href="konto">Konto</Nav.Link>
+              {/* <Nav.Link href="konto">Konto</Nav.Link> */}
               <Nav.Link href="Ulubiony"> Ulubiony</Nav.Link>
               <Nav.Link href="generator">Generator</Nav.Link>
-              {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-          </NavDropdown> */}
             </Nav>
+            {isAuthenticated ? authLinks : guestLinks}
 
 
-            <Nav className="ml-sm-1">
-              <Nav.Link href="login">Login</Nav.Link>
-              <Nav.Link href="rejestracja">Rejestracja</Nav.Link>
-            </Nav>
           </Navbar.Collapse>
 
         </Navbar>
@@ -105,3 +114,12 @@ export default function Navigacja() {
     </Router>
   )
 }
+
+
+
+const mapStateToProps = state => ({
+  auth: state.auth
+})
+
+
+export default connect(mapStateToProps, null)(Navigacja)

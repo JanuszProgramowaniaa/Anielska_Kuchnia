@@ -1,10 +1,4 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin:0;
-  padding: 0;
-  max-height: 100vh;
- 
-}
+
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -27,7 +21,7 @@ input[type=text], input[type=password] {
   width: 100%;
 }
 
-button:hover {
+.buttonClass:hover {
   opacity: 0.8;
 }
 

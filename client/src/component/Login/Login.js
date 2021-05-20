@@ -1,32 +1,58 @@
-import React from 'react'
+import React, { useState } from 'react'
 import LoginStyles from './Login.module.css'
 import img from '../../static/login/maklowicz.jpg'
+import { connect } from 'react-redux'
+import { login } from '../../actions/authAction'
 
-export default function Login() {
-    return (
-        <React.Fragment>
-        <h1 className={LoginStyles.logujSieHamie}>Zaloguj sie</h1>
-        <form action="action_page.php" method="post">
-            <div className={LoginStyles.img}>
-              <img src={img}  alt="Avatar" class="avatar"/>
-            </div>
-            <div class="container">
-              <label for="uname"><b>Nazwa użytkownika</b></label>
-              <input type="text" placeholder="Wprowadz nazwe uzytkownika" name="uname" required />
+function Login({ login }) {
 
-              <label for="psw"><b>Hasło</b></label>
-              <input type="password" placeholder="Wprowadz haslo" name="psw" required />
 
-              <button type="submit" className={LoginStyles.buttonClass}>Zaloguj sie </button>
-              <label>
-                <input type="checkbox" checked="false" name="remember" /> Zamapiętaj mnie
-                <span class="psw">Zapomniałeś <a href="reset-password">hasła?</a></span>
-                
-              </label>
-            </div>
-            
-        </form>
-       
-        </React.Fragment>
-    )
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+
+  const handleChangeEmail = (e) => setEmail(e.target.value);
+  const handleChangePassword = (e) => setPassword(e.target.value);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const user = {
+      email,
+      password
+    }
+
+    login(user);
+  }
+
+  return (
+    <React.Fragment>
+      <h1 className={LoginStyles.logujSieHamie}>Zaloguj sie</h1>
+
+      <div className={LoginStyles.imyczContainer}>
+        <img src={img} alt="Avatar" className={LoginStyles.obrazek} />
+      </div>
+      <form onSubmit={handleSubmit}>
+        <div class={LoginStyles.container}>
+          <label htmlFor="uname"><b>Nazwa użytkownika</b></label>
+          <input type="email" className={LoginStyles.inputs} placeholder="Wprowadz email" name="email" onChange={handleChangeEmail} />
+
+          <label htmlFor="psw"><b>Hasło</b></label>
+          <input type="password" placeholder="Wprowadz haslo" name="psw" onChange={handleChangePassword} />
+
+          <button type="submit" className={LoginStyles.buttonClass}>Zaloguj sie </button>
+
+        </div>
+
+      </form>
+
+    </React.Fragment>
+  )
 }
+const mapToStateProps = state => ({
+  error: state.erorr,
+  isAuthenticated: state.auth.isAuthenticated,
+})
+
+export default connect(mapToStateProps, { login })(Login);
+

@@ -1,42 +1,62 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import LoginStyles from './Rejestracja.module.css'
+import { connect } from 'react-redux'
+import { register } from '../../actions/authAction'
 
 
-export default function Rejestracja() {
+
+const Rejestracja = ({ register }) => {
+
+
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [msg, setMsg] = useState(null);
+
+    const handleChangeName = (e) => setName(e.target.value);
+    const handleChangeEmail = (e) => setEmail(e.target.value);
+    const handleChangePassword = (e) => setPassword(e.target.value);
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const user = {
+            name,
+            email,
+            password
+        }
+        register(user);
+    }
+
+
+
     return (
         <React.Fragment>
-        <h1 className={LoginStyles.logujSieHamie}>Zarejestruj się</h1>
-        <form action="action_page.php" method="post">
-         
-            <div class="container">
-            <label for="uname"><b>Imie</b></label>
-              <input type="text" placeholder="Wprowadz swoje imie" name="name" required />
+            <h1 className={LoginStyles.logujSieHamie}>Zarejestruj się</h1>
+            <form onSubmit={handleSubmit}>
 
-              <label for="uname"><b>Nazwisko</b></label>
-              <input type="text" placeholder="Wprowadz swoje nazwisko" name="uname" required />
+                <div className="container">
+                    <label htmlFor="name"><b>Nazwa uzytkownika</b></label>
+                    <input type="text" placeholder="Wymyśl swoją nazwę użytkownika" name="name" onChange={handleChangeName} />
 
-              <label for="uname"><b>Nazwa użytkownika</b></label>
-              <input type="text" placeholder="Wprowadz nazwe uzytkownika" name="uname" required />
+                    <label htmlFor="email"><b>Email</b></label>
+                    <input type="text" placeholder="Wprowadz swój email" name="email" onChange={handleChangeEmail} />
 
-              <label for="psw"><b>Hasło</b></label>
-              <input type="password" placeholder="Wprowadz haslo" name="psw" required />
+                    <label htmlFor="password"><b>Hasło</b></label>
+                    <input type="password" placeholder="Wprowadz haslo" name="password" onChange={handleChangePassword} />
 
-              <label for="psw"><b>Powtórz hasło</b></label>
-              <input type="password" placeholder="Wprowadz haslo" name="psw1" required />
+                    <button type="submit" className={LoginStyles.buttonClass} >Zarejestruj się </button>
 
-              <input type="checkbox" checked="false" name="rules" /> Potwierdzam regulamin
+                </div>
 
-              <button type="submit" className={LoginStyles.buttonClass}>Zarejestruj się </button>
-              
-              <label>
-            
-              
-                
-              </label>
-            </div>
-            
-        </form>
-       
+            </form>
+
         </React.Fragment>
     )
 }
+const mapToStateProps = state => ({
+    error: state.erorr,
+    isAuthenticated: state.auth.isAuthenticated,
+})
+
+export default connect(mapToStateProps, { register })(Rejestracja)

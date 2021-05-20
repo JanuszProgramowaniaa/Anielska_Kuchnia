@@ -1,4 +1,4 @@
- express = require('express');
+express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
@@ -12,7 +12,7 @@ app.use(express.json());
 
 
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology:true }
+mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }
 );
 const connection = mongoose.connection;
 connection.once('open', () => {
@@ -23,11 +23,11 @@ const recipeRouter = require('./routes/recipe');
 const userRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 
-app.use('/recipes',recipeRouter);
-app.use('/rejestracja',userRouter);
-app.use('/Login',authRouter);
+app.use('/recipes', recipeRouter);
+app.use('/rejestracja', userRouter);
+app.use('/Login', authRouter);
 
 
 app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
+  console.log(`Server is running on port: ${port}`);
 });
