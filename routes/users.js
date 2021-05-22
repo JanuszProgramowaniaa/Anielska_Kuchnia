@@ -18,13 +18,14 @@ router.route("/").post((req, res) => {
     bcrypt.genSalt(10, function (err, salt) {
       bcrypt.hash(newUser.password, salt, function (err, hash) {
         newUser.password = hash;
-        newUser.save().then((user) =>
-          jwt.sign(
-              { id:user.id },
+        newUser.save()
+          .then((user) =>
+            jwt.sign(
+              { id: user.id },
               process.env.jwtSecret,
-              {expiresIn:3600},
-              (err,token) =>{
-                if(err) throw err;
+              { expiresIn: 3600 },
+              (err, token) => {
+                if (err) throw err;
                 res.json({
                   token,
                   user: {
@@ -34,10 +35,10 @@ router.route("/").post((req, res) => {
                   },
                 })
               }
-          )
+            )
 
-          
-        );
+
+          );
       });
     });
   });

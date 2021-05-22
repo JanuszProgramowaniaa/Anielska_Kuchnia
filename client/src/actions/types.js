@@ -1,4 +1,10 @@
-export const FETCH_RECIPES = 'FETCH_POSTS';
+export const FETCH_RECIPES = 'FETCH_RECIPES';
+export const FETCH_RECIPE = 'FETCH_RECIPE';
+export const ID_TO_DISPLAY = 'ID_TO_DISPLAY';
+
+export const PUSH_RECIPE_SUCCESS = 'PUSH_RECIPE_SUCCESS'
+export const PUSH_RECIPE_FAILED = 'PUSH_RECIPE_FAILED'
+
 export const USER_LOADING = "USER_LOADING";
 export const USER_LOADED = "USER_LOADED";
 export const AUTH_ERROR = "AUTH_ERROR";

@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import mainPageReducer from './mainPageReducer'
+import recipesReducer from './recipesReducer'
 import errorReducer from './errorReducer'
 import authReducer from './authReducer'
 
 export default combineReducers({
-    main:mainPageReducer,
-    error:errorReducer,
-    auth:authReducer
+    main: recipesReducer,
+    error: errorReducer,
+    auth: authReducer
 })

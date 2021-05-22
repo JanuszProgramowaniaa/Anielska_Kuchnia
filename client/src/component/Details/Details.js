@@ -1,64 +1,83 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import lazania from '../../static/recipes/lazania.png'
 import CardMedia from '@material-ui/core/CardMedia';
 import DetailsStyles from './Details.module.css';
-import img from '../../static/login/maklowicz.jpg'
 import Comment from './Comment'
+import { connect } from 'react-redux'
+import { fetchRecipe } from '../../actions/recipesActions'
+import PropTypes from 'prop-types'
+import { useParams } from "react-router-dom"
 
-export default function Details() {
+function Details({ przepis, fetchRecipe }) {
+
+    const { przepisId } = useParams();
+    useEffect(() => {
+        fetchRecipe(przepisId);
+    }, [])
     return (
         <div className={DetailsStyles.details}>
             <h1 className="details"> Szczegółowy opis </h1>
-            <h2 className="details_2"> Lazania bolognese</h2>
+            <h2 className="details_2"> {przepis.tytul}</h2>
             <CardMedia
-        style={{height:'250px'}}
-        
-        image={lazania}
-        title="lasagneBolognese"
-        />
-            <span className="description">Lazania wbrew pozorom jest bardzo prostym daniem. Ta doskonała uczta kulinarna smakuje prawie każdemu.
-             Nie wymaga wielkich zdolności kulinarnych, wystarczy trzymać się przepisu.
-             Co więcej - po odgrzaniu smakuje równie dobrze, więc z powodzeniem możemy ją zabrać do pracy.</span>
+                style={{ height: '250px' }}
+
+                image={lazania}
+                title="lasagneBolognese"
+            />
+            <span className="description">{przepis.krotki_opis}</span>
 
             <h1 className="details"> Składniki </h1>
             <ul>
-                <li>15 płatów lasagne</li>
-                <li>150 g tartego parmezanu</li>
+                {JSON.stringify(przepis.skladniki)}
+
+
+
+
             </ul>
 
-            <div className="content"><h1>SOS BOLOŃSKI</h1></div>
-            <ul>
-                <li>3 łyżki oliwy</li>
-                <li>1 cebula</li> 
-                <li>2 łodygi selera naciowego</li> 
-                <li>1 marchewka</li> 
-                <li>150 g boczku wędz. lub gotowanego</li> 
-                <li>500 g mielonego mięsa wieprzowo-wołowego</li> 
-                <li>1 szklanka białego lub czerwonego wina</li> 
-                <li>4 łyżki koncentratu pomidorowego</li> 
-                <li>1 szklanka gorącego bulionu</li> 
-                <li>400 g passaty pomidorowej</li> 
-            </ul>
-            <div className="content"><h1>SOS BESZAMELOWY</h1></div>
-            <ul>
-                <li>4 łyżki masła</li>
-                <li>3 łyżki mąki</li>
-                <li>650 ml mleka</li>
-                <li>szczypta gałki muszkatołowej</li>
-            </ul>
+            <div className="content"><h1>Sposob wykonania</h1></div>
+            <span className="description">{przepis.sposob_wykonania}</span>
+
             <div className="comments">
                 <div className="bg-comments"> <h1 className="details"> Komentarze </h1>
-                
+
                     <form>
-                    <input type="text" placeholder="Wprowadz swoj komentarz"/>
+                        <input type="text" placeholder="Wprowadz swoj komentarz" />
                         <button className="addComents">
-                        Dodaj komentarz</button>
-                        <Comment/>
-                        
+                            Dodaj komentarz</button>
+
+
+
+
                     </form>
+                    {przepis.komentarze.map(comment => <Comment comment={comment} />)}
+
+
+
                 </div>
             </div>
         </div>
+
+        // <p>{przepis.tytul}</p>
     )
 
 }
+
+Details.propTypes = {
+    przepis: PropTypes.array.isRequired,
+    fetchRecipe: PropTypes.func.isRequired,
+    przepisId: PropTypes.string.isRequired
+}
+
+const mapStateToProps = state => {
+    return {
+        przepis: state.main.przepis
+    }
+}
+// const mapDispatchToProps = () => (id, dispatch) => {
+//     return {
+//         fetchRecipe: () => dispatch(fetchRecipe(id))
+//     }
+// }
+
+export default connect(mapStateToProps, { fetchRecipe })(Details)

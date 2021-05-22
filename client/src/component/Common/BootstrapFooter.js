@@ -1,9 +1,9 @@
 import React from "react";
-import {Card,Button} from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 export default function BootstrapFooter() {
   return (
-    <Card style={{'marginTop':"2rem"}}>
+    <Card style={{ 'marginTop': "2rem" }}>
       <Card.Header>Anielska kuchnia</Card.Header>
       <Card.Body>
         <Card.Title>Sprawdz nasz projekt i wzmocnij naszą aplikację</Card.Title>

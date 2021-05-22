@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import './Navbar.css';
 import Main from '../Main/Main'
 import Details from '../Details/Details'
@@ -20,6 +20,7 @@ import {
 import { Button, Navbar, Nav, Form, FormControl } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connect } from 'react-redux'
+import RecipesAdd from '../Recipes/RecipesAdd';
 
 
 
@@ -65,8 +66,10 @@ function Navigacja({ auth }) {
               <Nav.Link href="przepisy">Przepisy</Nav.Link>
               <Nav.Link href="ranking">Ranking</Nav.Link>
               {/* <Nav.Link href="konto">Konto</Nav.Link> */}
-              <Nav.Link href="Ulubiony"> Ulubiony</Nav.Link>
+              {isAuthenticated ? <Nav.Link href="Ulubiony"> Ulubiony</Nav.Link> : ''}
+
               <Nav.Link href="generator">Generator</Nav.Link>
+              <Nav.Link href="dodaj-przepis">Dodaj przepis</Nav.Link>
             </Nav>
             {isAuthenticated ? authLinks : guestLinks}
 
@@ -82,7 +85,7 @@ function Navigacja({ auth }) {
           <Route exact path="/">
             <Main />
           </Route>
-          <Route path="/Details">
+          <Route exact path="/Details/:przepisId">
             <Details />
           </Route>
           <Route path="/przepisy">
@@ -93,6 +96,9 @@ function Navigacja({ auth }) {
           </Route>
           <Route path="/Login">
             <Login />
+          </Route>
+          <Route path="/dodaj-przepis">
+            <RecipesAdd />
           </Route>
           <Route path="/Rejestracja">
             <Rejestracja />

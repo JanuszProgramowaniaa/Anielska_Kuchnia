@@ -2,6 +2,9 @@ express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
+const path = require('path')
+
+
 require('dotenv').config();
 
 const app = express();
@@ -9,6 +12,8 @@ const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+app.use('/img', express.static(path.join(__dirname, 'static')))
+
 
 
 const uri = process.env.ATLAS_URI;
@@ -19,14 +24,17 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
 
+
+
 const recipeRouter = require('./routes/recipe');
 const userRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
+const detailsRouter = require('./routes/details');
 
 app.use('/recipes', recipeRouter);
 app.use('/rejestracja', userRouter);
 app.use('/Login', authRouter);
-
+app.use('/details', detailsRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);

@@ -1,12 +1,12 @@
 import React from "react";
 import CommentStyle from "./Comment.module.css";
-export default function Comment() {
+export default function Comment(props) {
   return (
     <div className={CommentStyle.author}>
       <span className={CommentStyle.header}>
-        <b>Robert</b> <b className={CommentStyle.date}>20.05.2021</b>
+        <b>{props.comment.author}</b> <b className={CommentStyle.date}>20.05.2021</b>
       </span>
-      <p>Danie pierwsza klasa dla każdego głodomorka </p>
+      <p>{props.comment.treść}</p>
     </div>
   );
 }
