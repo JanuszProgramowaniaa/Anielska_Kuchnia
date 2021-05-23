@@ -1,6 +1,6 @@
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=email], input[type=password] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -27,15 +27,22 @@ button:hover {
 /* Center the image and position the close button */
 
 
-img.avatar {
-  width: 40%;
+.imyczContainer {
+  width: 100%;
   border-radius: 5%;
-
+  text-align: center;
+}
+.obrazek{
+  object-fit: fill;
+  max-width: 100%;
+  border-radius: 50%;
 }
 
 .container {
   padding: 16px;
+  width: 90%;
   background-color:#f1f1f1;
+  margin: auto;
 }
 
 span.psw {
@@ -61,11 +68,14 @@ span.psw {
   .cancelbtn {
      width: 100%;
   }
+ 
 }
 
 
 @media (max-width: 800px) {
-  img.avatar{width: 100%;}
+  .obrazek{
+    width: 100%;
+   }
   
   
       

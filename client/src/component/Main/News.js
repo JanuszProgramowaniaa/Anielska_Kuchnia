@@ -10,11 +10,11 @@ import mega_rollo from "../../static/recipes/mega_rollo.png";
 export default class News extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = { nowe: [] };
   }
   componentDidMount() {
-        this.setState({ nowe: this.props.recipes});
+    this.setState({ nowe: this.props.recipes });
   }
 
   render() {

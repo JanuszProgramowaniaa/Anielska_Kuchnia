@@ -1,25 +1,12 @@
 .details{
     width: 720px;
     margin: auto;
-  }
-  
-  .spanik{
+}
+
+/* span{
     padding: 15px;
-  }
-  
-  .addComents{
-    margin-bottom:10px;
-  }
-  .whosAdd{
-    float:left;
-    color: green;
-  }
-  .formik{
-    text-align: left;
-  }
-  .inpt{
-    text-align: left;
-  }
-  .inserted{
-    border:2px solid red;
-  }
+    
+} */
+.description{
+    
+}
