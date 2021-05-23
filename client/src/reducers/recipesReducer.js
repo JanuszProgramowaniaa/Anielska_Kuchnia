@@ -1,10 +1,11 @@
-import { FETCH_RECIPES, FETCH_RECIPE, PUSH_RECIPE_SUCCESS, PUSH_RECIPE_FAILED } from '../actions/types'
+import { FETCH_RECIPES, FETCH_RECIPE, PUSH_RECIPE_SUCCESS, PUSH_RECIPE_FAILED, PUSH_COMMENT_SUCCES, PUSH_COMMENT_FAILED } from '../actions/types'
 import { } from '../actions/types'
 
 
 const initialState = {
     przepisy: [],
     przepis: {},
+    dodanyKomentarz: {},
     msg: ''
 }
 
@@ -30,6 +31,18 @@ export default function (state = initialState, action) {
                 ...state,
                 msg: action.msg
             };
+        case PUSH_COMMENT_SUCCES:
+            return {
+                ...state,
+                dodanyKomentarz: action.payload
+
+            }
+        case PUSH_COMMENT_FAILED:
+            return {
+                ...state,
+                msg: action.msg
+            }
+
         default:
             return {
                 ...state

@@ -1,4 +1,4 @@
-import { FETCH_RECIPES, FETCH_RECIPE, PUSH_RECIPE_FAILED, PUSH_RECIPE_SUCCESS } from "./types";
+import { FETCH_RECIPES, FETCH_RECIPE, PUSH_RECIPE_FAILED, PUSH_RECIPE_SUCCESS, PUSH_COMMENT_SUCCES, PUSH_COMMENT_FAILED } from "./types";
 import { returnErrors } from "./errorAction";
 import axios from "axios";
 import { tokenConfig } from './authAction'
@@ -29,7 +29,6 @@ export const fetchRecipe = (id) => (dispatch) => {
 };
 
 
-
 export const pushRecipe = (recipe) => (dispatch, getState) => {
 
   //request body
@@ -46,6 +45,21 @@ export const pushRecipe = (recipe) => (dispatch, getState) => {
         type: PUSH_RECIPE_FAILED
       })
     })
-
 };
 
+export const pushComment = (komentarz, przepisId) => (dispatch, getState) => {
+
+  const body = JSON.stringify(komentarz)
+
+  axios.patch('/details/' + przepisId + '/add-comment', body, tokenConfig(getState))
+    .then(res => dispatch({
+      type: PUSH_COMMENT_SUCCES,
+      payload: res.data
+    }))
+    .catch(err => {
+      dispatch(returnErrors(err.data, err.status, 'PUSH_RECIPE_FAILED'));
+      dispatch({
+        type: PUSH_COMMENT_FAILED
+      })
+    })
+};

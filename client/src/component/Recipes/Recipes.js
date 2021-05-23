@@ -41,7 +41,7 @@ function Recipes({ przepisy, fetchRecipes }) {
   return przepisy ? (
     <Grid container spacing={3}>
       {przepisy.map(przepis =>
-        <Grid item xl={3} lg={3} md={3} sm={4} xs={12}>
+        <Grid key={przepis._id} item xl={3} lg={3} md={3} sm={4} xs={12}>
           <CardComponent przepis={przepis} />
         </Grid>
       )}
