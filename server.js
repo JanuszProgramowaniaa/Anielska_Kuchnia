@@ -24,6 +24,7 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
 
+<<<<<<< HEAD
 
 
 const recipeRouter = require('./routes/recipe');
@@ -35,6 +36,14 @@ app.use('/recipes', recipeRouter);
 app.use('/rejestracja', userRouter);
 app.use('/Login', authRouter);
 app.use('/details', detailsRouter);
+=======
+const recipeRouter = require('./routes/recipe');
+const userRouter = require('./routes/users');
+
+
+app.use('/recipes',recipeRouter);
+app.use('/rejestracja',userRouter);
+>>>>>>> e9b167c (adding user model and controller)
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
